@@ -7,6 +7,7 @@ A full-stack clinical Electronic Medical Record (EMR) web application built for 
 > **Note:** This is a case-study repository. The application source code is kept private at the request of the project stakeholders, so this repo documents the work, design, and outcomes rather than hosting the code. A live demo is available on request.
 
 **Live project:** in active use at Carleton University's nursing simulation lab
+
 **Portfolio:** [al-howaid.me](https://al-howaid.me)
 
 ---
