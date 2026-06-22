@@ -81,6 +81,7 @@ This structure is what lets every student work the same patient independently wh
 ![Patient charting page](screenshots/charting.png)
 
 **Sample exported PDF**
+
 ![Sample exported PDF](screenshots/sample-pdf.png)
 
 ---
