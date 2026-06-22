@@ -88,4 +88,4 @@ This structure is what lets every student work the same patient independently wh
 
 ## What I Learned
 
-This was my first time taking a web application all the way from an empty repository to something people rely on weekly. A lot of the real work was in things I did not expect going in: getting the security right, being careful with user data, and making an admin panel that an instructor with no technical background could actually navigate. Working directly with faculty also showed me that the first set of requirements is rarely the final one, and the design kept changing as they used it.
+This was my first time taking a web application all the way from an empty repository to something people rely on weekly. A lot of the real work was in things I did not expect going in: getting the security right, being careful with user data, and making an admin panel that an instructor with no technical background could actually navigate. Working directly with faculty also showed me that the first set of requirements is rarely the final one, and the design kept changing as they used it and sent feedback.
