@@ -50,11 +50,58 @@ A full-stack clinical Electronic Medical Record (EMR) web application built for 
 
 ## Behind the Scenes
 
-*(Add these assets to this folder to document your process.)*
-
 - `screenshots/`, admin dashboard, a charting page, a sample exported PDF
-- `schema/`, entity diagram of the data model (patients, vitals, notes, users, chart entries)
-- Notes on the 24-section chart structure and how PDF generation maps to it
+
+
+
+
+- `app.py` — Flask entry point: configuration, auth routes, patient/chart
+  routes, image uploads, the instructor admin panel (Flask-Admin), and the
+  `init-db` / `migrate` CLI commands.
+- `models.py` — Database tables as SQLAlchemy classes:
+  - `User` — anyone who logs in (`student` or `instructor`), with an optional
+    profile picture.
+  - `Patient` — one simulated patient (demographics + medical history).
+  - `Vital` — one set of vital signs.
+  - `Note` — a timestamped record; the `kind` field covers notes, imaging,
+    consults, and orders in one table.
+  - `MedOrder` — a medication order (MAR).
+  - `MedAdmin` — a student's own scan state for a medication order.
+  - `HistoryReview` — a student's own tick state for the history checklist.
+  - `ChartEntry` — one entry for the data-driven chart tabs (neuro,
+    respiratory, etc.); the tab is named by `section`.
+  - `patient_student` — link table for the many-to-many patient assignment.
+- `chart_sections.py` — Defines every chart tab and its form fields in one
+  place; the routes and templates loop over this.
+- `seed.py` — Wipes the database and inserts demo users and patients.
+  Re-runnable.
+- `gunicorn.conf.py` — Production server settings (worker and thread counts).
+
+**Templates** (`templates/`, Jinja2)
+
+- `base.html` — Shared page layout (header with profile picture, flash
+  messages).
+- `login.html` — Sign-in form.
+- `patients.html` — Patient list (home page after login).
+- `patient.html` — Redirects to the first chart tab.
+- `chart.html` — The tabbed patient chart; includes the partials below.
+- `profile.html` — Upload a profile picture.
+- `_vitals.html`, `_notes.html`, `_mar.html`, `_history.html`,
+  `_section_chart.html`, `_fields.html`, `_patient_form.html` — Reusable
+  pieces of the chart (one per section type).
+- `_*_refs.html` — Reference images and scales shown beside certain tabs
+  (Braden, falls, neuro, GI, ADLs, psychosocial).
+- `admin/` — Admin panel pages: `index.html` (landing) and
+  `confirm_create.html` / `confirm_edit.html` (save-confirmation wrappers).
+
+**Static** (`static/`)
+
+- `style.css` — All styling (no framework).
+- `admin_picker.css`, `admin_picker.js` — The assign-students dropdown in the
+  admin panel.
+- `confirm_save.js` — The "confirm what you're saving" pop-up.
+- `*.png` — Reference images (body figure, Braden scale, etc.) and the logo.
+- `uploads/` — Uploaded images (imaging attachments and profile pictures).
 
 ---
 
