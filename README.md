@@ -74,6 +74,9 @@ This structure is what lets every student work the same patient independently wh
 **Instructor dashboard**
 ![Instructor dashboard](screenshots/dashboard.png)
 
+**Student dashboard**
+![Student dashboard](screenshots/studentdashboard.png)
+
 **Patient charting page**
 ![Patient charting page](screenshots/charting.png)
 
