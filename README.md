@@ -77,7 +77,7 @@ A full-stack clinical Electronic Medical Record (EMR) web application built for 
   Re-runnable.
 - `gunicorn.conf.py` — Production server settings (worker and thread counts).
 
-**Templates** (`templates/`, Jinja2)
+**Templates** `templates/`
 
 - `base.html` — Shared page layout (header with profile picture, flash
   messages).
